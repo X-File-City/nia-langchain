@@ -1,0 +1,339 @@
+{
+  "id": "nia-langchain-onboarding",
+  "title": "Nia LangChain Integration Tour",
+  "description": "Explore the dual Python/TypeScript LangChain integration for Nia AI — 20 tools for code search, source management, GitHub access, and knowledge sharing",
+  "version": "1.0.0",
+  "audience": "New Contributors & Integrators",
+  "prerequisites": [
+    "Basic familiarity with LangChain concepts (tools, agents, toolkits)",
+    "Python or TypeScript experience"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Project Overview",
+      "description": "Welcome to nia-langchain — a monorepo providing LangChain integrations for Nia AI. The project ships two packages with full feature parity: a Python package (langchain-nia) and a TypeScript package (@nozomioai/langchain-nia). Both expose 20 tools organized into 5 categories that let LangChain agents search code, manage sources, query GitHub, share context, and analyze dependencies.",
+      "estimatedTime": 60,
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-2-monorepo-layout",
+      "title": "Monorepo Structure",
+      "description": "The libs/ directory houses both packages side by side. This dual-implementation pattern ensures Python and TypeScript developers get the same capabilities. The root contains shared configuration — LICENSE (MIT), README, and .gitignore — while each package manages its own build system, dependencies, and tests independently.",
+      "estimatedTime": 60,
+      "focusDirectory": "libs",
+      "highlightLayers": [
+        {
+          "id": "python-package",
+          "name": "Python Package",
+          "color": "#3572A5",
+          "items": [
+            {
+              "path": "libs/langchain-nia",
+              "type": "directory"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "typescript-package",
+          "name": "TypeScript Package",
+          "color": "#3178c6",
+          "items": [
+            {
+              "path": "libs/langchain-nia-js",
+              "type": "directory"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-3-python-toolkit",
+      "title": "Python Package — Toolkit & Tools",
+      "description": "The Python package lives in libs/langchain-nia/ and is built with Hatchling. The entry point is langchain_nia/__init__.py which exports all 20 tool classes. The NiaToolkit in toolkit.py aggregates tools into configurable groups — search, sources, GitHub, contexts, and dependencies — so agents can load only what they need. Each tool inherits from LangChain's BaseTool with Pydantic input schemas and both sync (_run) and async (_arun) methods.",
+      "estimatedTime": 120,
+      "focusDirectory": "libs/langchain-nia/langchain_nia",
+      "highlightLayers": [
+        {
+          "id": "python-entry",
+          "name": "Package Entry & Toolkit",
+          "color": "#10b981",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/__init__.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/toolkit.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "python-api",
+          "name": "API Wrapper",
+          "color": "#f59e0b",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/_api_wrapper.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-4-python-tools",
+      "title": "Python Tools — Five Categories",
+      "description": "The 20 tools are organized into 5 logical groups: Search tools (search, web_search, deep_research, universal_search, advisor) for querying repos and docs; Source tools (source_index, source_list, source_subscribe, source_sync, source_read, source_grep, source_explore) for managing indexed data; GitHub tools (github_search, github_read, github_glob, github_tree) for direct repo access; Context tools (context_save, context_search) for cross-agent knowledge sharing; and Dependency tools (dependency_subscribe, dependency_analyze) for project dependency intelligence.",
+      "estimatedTime": 120,
+      "focusDirectory": "libs/langchain-nia/langchain_nia",
+      "highlightLayers": [
+        {
+          "id": "search-tools",
+          "name": "Search Tools",
+          "color": "#3b82f6",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/search.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/web_search.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/deep_research.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/universal_search.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/advisor.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "source-tools",
+          "name": "Source Management Tools",
+          "color": "#10b981",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_index.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_list.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_subscribe.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_sync.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_read.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_grep.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/source_explore.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "github-tools",
+          "name": "GitHub Tools",
+          "color": "#8b5cf6",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/github_search.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/github_read.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/github_glob.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/github_tree.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "context-dep-tools",
+          "name": "Context & Dependency Tools",
+          "color": "#ef4444",
+          "items": [
+            {
+              "path": "libs/langchain-nia/langchain_nia/context_save.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/context_search.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/dependency_subscribe.py",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/langchain_nia/dependency_analyze.py",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-5-typescript-package",
+      "title": "TypeScript Package — Parallel Implementation",
+      "description": "The TypeScript package (@nozomioai/langchain-nia) mirrors the Python package with full feature parity. Built with tsup, it ships both CommonJS and ESM formats. The architecture is more consolidated: all 20 tools live in a single tools.ts file using Zod schemas for input validation, utils.ts contains the NiaAPIWrapper (async-only via fetch), and toolkit.ts provides the same configurable NiaToolkit interface. Each tool extends LangChain's StructuredTool class.",
+      "estimatedTime": 120,
+      "focusDirectory": "libs/langchain-nia-js/src",
+      "highlightLayers": [
+        {
+          "id": "ts-core",
+          "name": "Core Modules",
+          "color": "#3178c6",
+          "items": [
+            {
+              "path": "libs/langchain-nia-js/src/index.ts",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/src/toolkit.ts",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/src/tools.ts",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/src/utils.ts",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-6-build-and-config",
+      "title": "Build Systems & Configuration",
+      "description": "Each package uses idiomatic build tooling. The Python package uses Hatchling with pyproject.toml for metadata, ruff for linting, mypy for type checking, and uv for dependency management. The TypeScript package uses tsup for bundling, vitest for testing, eslint for linting, and prettier for formatting. Both packages define their own test suites — Python uses pytest with respx for HTTP mocking, TypeScript uses vitest.",
+      "estimatedTime": 90,
+      "focusDirectory": "libs",
+      "highlightLayers": [
+        {
+          "id": "python-config",
+          "name": "Python Config",
+          "color": "#3572A5",
+          "items": [
+            {
+              "path": "libs/langchain-nia/pyproject.toml",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/Makefile",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia/uv.lock",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "ts-config",
+          "name": "TypeScript Config",
+          "color": "#3178c6",
+          "items": [
+            {
+              "path": "libs/langchain-nia-js/package.json",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/tsconfig.json",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/tsup.config.ts",
+              "type": "file"
+            },
+            {
+              "path": "libs/langchain-nia-js/vitest.config.ts",
+              "type": "file"
+            }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-7-ci-cd",
+      "title": "CI/CD & Automation",
+      "description": "The .github/ directory contains GitHub Actions workflows for linting, testing, codespell checks, test releases, and official releases. Custom actions and helper scripts automate the release pipeline for both packages. This ensures both the Python (PyPI) and TypeScript (npm) packages stay in sync and pass quality gates before publishing.",
+      "estimatedTime": 60,
+      "focusDirectory": ".github",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-8-wrap-up",
+      "title": "Tour Complete",
+      "description": "You've explored the full nia-langchain monorepo — from the dual Python/TypeScript packages with 20 shared tools across 5 categories, to the build systems, testing strategies, and CI/CD pipeline. To get started: set NIA_API_KEY in your environment, instantiate NiaToolkit in your language of choice, and pass the tools to a LangChain agent. Check the README for quick-start examples.",
+      "estimatedTime": 30,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    }
+  ],
+  "metadata": {
+    "author": "Claude",
+    "createdAt": "2026-03-16T00:00:00.000Z",
+    "tags": [
+      "onboarding",
+      "architecture",
+      "langchain",
+      "dual-language"
+    ]
+  }
+}
