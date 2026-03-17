@@ -95,7 +95,7 @@
     {
       "id": "step-4-python-tools",
       "title": "Python Tools — Five Categories",
-      "description": "The 20 tools are organized into 5 logical groups: Search tools (search, web_search, deep_research, universal_search, advisor) for querying repos and docs; Source tools (source_index, source_list, source_subscribe, source_sync, source_read, source_grep, source_explore) for managing indexed data; GitHub tools (github_search, github_read, github_glob, github_tree) for direct repo access; Context tools (context_save, context_search) for cross-agent knowledge sharing; and Dependency tools (dependency_subscribe, dependency_analyze) for project dependency intelligence.",
+      "description": "The 20 tools span 5 groups: Search (semantic, web, deep research, universal, advisor), Sources (index, list, subscribe, sync, read, grep, explore), GitHub (search, read, glob, tree), Context (save, search), and Dependencies (subscribe, analyze). Each group is color-coded below.",
       "estimatedTime": 120,
       "focusDirectory": "libs/langchain-nia/langchain_nia",
       "highlightLayers": [
@@ -221,7 +221,7 @@
     {
       "id": "step-5-typescript-package",
       "title": "TypeScript Package — Parallel Implementation",
-      "description": "The TypeScript package (@nozomioai/langchain-nia) mirrors the Python package with full feature parity. Built with tsup, it ships both CommonJS and ESM formats. The architecture is more consolidated: all 20 tools live in a single tools.ts file using Zod schemas for input validation, utils.ts contains the NiaAPIWrapper (async-only via fetch), and toolkit.ts provides the same configurable NiaToolkit interface. Each tool extends LangChain's StructuredTool class.",
+      "description": "The TypeScript package mirrors the Python package with full feature parity. Built with tsup, it ships both CommonJS and ESM formats. The architecture is more consolidated: all 20 tools live in a single tools.ts file using Zod schemas for input validation, utils.ts contains the NiaAPIWrapper (async-only via fetch), and toolkit.ts provides the same configurable NiaToolkit interface. Each tool extends LangChain's StructuredTool class.",
       "estimatedTime": 120,
       "focusDirectory": "libs/langchain-nia-js/src",
       "highlightLayers": [
