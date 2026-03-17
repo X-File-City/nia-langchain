@@ -95,7 +95,7 @@
     {
       "id": "step-4-python-tools",
       "title": "Python Tools — Five Categories",
-      "description": "The 20 tools span 5 groups: Search (semantic, web, deep research, universal, advisor), Sources (index, list, subscribe, sync, read, grep, explore), GitHub (search, read, glob, tree), Context (save, search), and Dependencies (subscribe, analyze). Each group is color-coded below.",
+      "description": "20 tools across 5 color-coded groups: 1) Search — semantic, web, deep research, universal, advisor 2) Sources — index, list, subscribe, sync, read, grep, explore 3) GitHub — search, read, glob, tree 4) Context — save, search 5) Dependencies — subscribe, analyze",
       "estimatedTime": 120,
       "focusDirectory": "libs/langchain-nia/langchain_nia",
       "highlightLayers": [
