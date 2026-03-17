@@ -19,7 +19,7 @@
     {
       "id": "step-2-monorepo-layout",
       "title": "Monorepo Structure",
-      "description": "The libs/ directory houses both packages side by side. This dual-implementation pattern ensures Python and TypeScript developers get the same capabilities. The root contains shared configuration — LICENSE, README, and .gitignore — while each package manages its own build system, dependencies, and tests independently.",
+      "description": "The libs/ directory houses both packages side by side. This dual-implementation pattern ensures Python and TypeScript developers get the same capabilities. The root contains shared configuration while each package manages its own build system, dependencies, and tests independently.",
       "estimatedTime": 60,
       "focusDirectory": "libs",
       "highlightLayers": [
