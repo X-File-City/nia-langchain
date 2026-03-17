@@ -55,7 +55,7 @@
     {
       "id": "step-3-python-toolkit",
       "title": "Python Package — Toolkit & Tools",
-      "description": "The Python package lives in libs/langchain-nia/ and is built with Hatchling. The entry point is langchain_nia/__init__.py which exports all 20 tool classes. The NiaToolkit in toolkit.py aggregates tools into configurable groups — search, sources, GitHub, contexts, and dependencies — so agents can load only what they need. Each tool inherits from LangChain's BaseTool with Pydantic input schemas and both sync (_run) and async (_arun) methods.",
+      "description": "The Python package lives in libs/langchain-nia/ and is built with Hatchling. The entry point is langchain nia/__init__.py which exports all 20 tool classes. The NiaToolkit in toolkit.py aggregates tools into configurable groups — search, sources, GitHub, contexts, and dependencies — so agents can load only what they need. Each tool inherits from LangChain's BaseTool with Pydantic input schemas and both sync and async methods.",
       "estimatedTime": 120,
       "focusDirectory": "libs/langchain-nia/langchain_nia",
       "highlightLayers": [
@@ -95,7 +95,7 @@
     {
       "id": "step-4-python-tools",
       "title": "Python Tools — Five Categories",
-      "description": "20 tools across 5 color-coded groups: 1) Search — semantic, web, deep research, universal, advisor 2) Sources — index, list, subscribe, sync, read, grep, explore 3) GitHub — search, read, glob, tree 4) Context — save, search 5) Dependencies — subscribe, analyze",
+      "description": "20 tools across 5 groups: 1) Search (semantic, web, deep research, universal, advisor) 2) Sources (index, list, subscribe, sync, read, grep, explore) 3) GitHub (search, read, glob, tree) 4) Context (save, search) 5) Dependencies (subscribe, analyze)",
       "estimatedTime": 120,
       "focusDirectory": "libs/langchain-nia/langchain_nia",
       "highlightLayers": [
